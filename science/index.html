@@ -30,31 +30,63 @@
             margin: 3%;
             height: 400;
             border-radius: 15px;
+            border: 3px solid;
+      }
+      .pdf {
+            border-radius: 20px;
             border: 5px solid #000045;
+            margin-top: 2%;
+            text-align: center;
+      }
+      .pdf h1{
+            font-size: 50px;
       }
 </style>
+<head>
+<title>DavNotes-Science</title>
+</head>
 <body>
       <div class="searchbar">
             <input class="searchtxt" onkeyup="srch(this.value.toLowerCase())" placeholder="Search...">
             <img class="searchimg" src="https://shashankdav.github.io/search.png">
       </div>
-      <div class="pdf">
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-4(ACID BASES AND SALT).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-6(MOTION AND TIME).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-7(RESPIRATION IN ORGANISM).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-8(TRANSPORTATION IN PLANTS AND ANIMAL).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-11(ELECTRIC CHAAGES AT REST).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-14(FABRIC AND FIBRE).pdf"></iframe>
-            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-17(ELECTRIC CURRENT AND ITS EFFECT).pdf"></iframe>
+      <div class="pdfs">
+            <div class="pdf">
+                  <h1>Ch-4 (Acids Bases And Salts)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-4(ACID BASES AND SALT).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-6 (Motion And Time)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-6(MOTION AND TIME).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-7 (Respiration In Organisms)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-7(RESPIRATION IN ORGANISM).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-8 (Transportation In Plants And Animals)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-8(TRANSPORTATION IN PLANTS AND ANIMAL).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-11 (Electric Charges At Rest)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-11(ELECTRIC CHAAGES AT REST).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-14 (Fabric From Fibre)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-14(FABRIC AND FIBRE).pdf"></iframe>
+            </div>
+            <div class="pdf">
+                  <h1>Ch-17 (Electric Currents And Its Effect)</h1>
+                  <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-17(ELECTRIC CURRENT AND ITS EFFECT).pdf"></iframe>
+            </div>
       </div>
 </body>
 <script>
       function srch(x) {
-            var y = document.querySelectorAll("#ch")
+            var y = document.querySelectorAll(".pdf");
 
             for (let i=0;i<y.length;i++) {
-                  var zz = y[i].src.toLowerCase().split('/');
-                  var z = zz[5];
+                  var z = y[i].innerHTML.toLowerCase();
                   
                   if (z.includes(x)) {
                         y[i].style.display = "";
