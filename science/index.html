@@ -1,1 +1,67 @@
-Hi
+<style>
+      .searchbar {
+            display: flex;
+            width: 100%;
+            border: 5px solid #000045;
+            border-radius: 75px;
+            overflow: hidden;
+            height: 100px;
+            margin: 0;
+      }
+      
+      .searchimg {
+            height: 75;
+            margin: 13 -80;
+            margin-left: 5;
+      }
+      
+      .searchtxt {
+            margin-left: 30;
+            border: none;
+            outline: none;
+            font-size: 60;
+            height: 100px;
+            background: transparent;
+            color: black;
+            width: 87%;
+      }
+      #ch {
+            width: 94%;
+            margin: 3%;
+            height: 400;
+            border-radius: 15px;
+            border: 5px solid #000045;
+      }
+</style>
+<body>
+      <div class="searchbar">
+            <input class="searchtxt" onkeyup="srch(this.value.toLowerCase())" placeholder="Search...">
+            <img class="searchimg" src="https://shashankdav.github.io/search.png">
+      </div>
+      <div class="pdf">
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-4(ACID BASES AND SALT).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-6(MOTION AND TIME).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-7(RESPIRATION IN ORGANISM).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-8(TRANSPORTATION IN PLANTS AND ANIMAL).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-11(ELECTRIC CHAAGES AT REST).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-14(FABRIC AND FIBRE).pdf"></iframe>
+            <iframe id="ch" src="https://shashankdav.github.io/davnotes/science/CH-17(ELECTRIC CURRENT AND ITS EFFECT).pdf"></iframe>
+      </div>
+</body>
+<script>
+      function srch(x) {
+            var y = document.querySelectorAll("#ch")
+
+            for (let i=0;i<y.length;i++) {
+                  var zz = y[i].src.toLowerCase().split('/');
+                  var z = zz[5];
+                  
+                  if (z.includes(x)) {
+                        y[i].style.display = "";
+                  }
+                  else {
+                        y[i].style.display = "none";
+                  }
+            }
+      }
+</script>
